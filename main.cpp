@@ -139,12 +139,6 @@ void webMain()
 	initGraphics();
 }
 
-[[cheerp::genericjs]]
-static void debugger()
-{
-	asm("debugger");
-}
-
 struct Paddle
 {
 	double x{0};
