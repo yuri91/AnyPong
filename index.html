@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+			#info {
+				position: absolute;
+				top: 560px;
+				width: 100%;
+				text-align: left;
+				z-index: 100;
+				display:block;
+				color: white;
+				font-size: 32px;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="js/three.js"></script>
+		<script>
+			let {
+				Scene,
+				PerspectiveCamera,
+				WebGLRenderer,
+				BoxGeometry,
+				Mesh,
+				MeshLambertMaterial,
+				SphereGeometry,
+				Object3D,
+				HemisphereLight,
+				DirectionalLight,
+			} = THREE;
+			let threeState = {};
+		</script>
+		<script src="js/main.js"></script>
+		<script>
+			mainLoop.promise.then(() => {
+				document.addEventListener("keydown",keyDownHandler);
+				function raf() {
+					requestAnimationFrame(raf);
+					mainLoop();
+				}
+				raf();
+			});
+		</script>
+	</body>
+</html>
