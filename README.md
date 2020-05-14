@@ -4,8 +4,8 @@ Simple example of using the experimental anyref feature in Cheerp.
 
 This is a simple pong-like game using Three.js.
 
-The Three.js API needed by the game is declared in three.js, and the game logic
-is in main.cpp.
+The Three.js API needed by the game is declared in `three.h`, and the game logic
+is in `main.cpp`.
 
 The highlight of the example is that all the logic is compiled to Wasm, and uses
 the "anyref" feature to interact with the Three.js library and the DOM.
