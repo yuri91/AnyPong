@@ -87,9 +87,19 @@ public:
 	Scene();
 };
 
+class WebGLRendererOptions: public Object {
+public:
+	WebGLRendererOptions(HTMLCanvasElement* canvas): Object()
+	{
+		this->set_canvas(canvas);
+	}
+	void set_canvas(HTMLCanvasElement* canvas);
+};
+
 class WebGLRenderer: public Object {
 public:
 	WebGLRenderer();
+	WebGLRenderer(WebGLRendererOptions* opts);
 	void setSize(int w, int h);
 	void setClearColor(unsigned color, double alpha);
 	Element* get_domElement();

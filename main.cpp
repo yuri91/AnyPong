@@ -92,10 +92,10 @@ Mesh* createBall()
 
 void initGraphics()
 {
-	WebGLRenderer* renderer = new WebGLRenderer();
+	HTMLCanvasElement* canvas = (HTMLCanvasElement*)document.getElementById("canvas");
+	WebGLRenderer* renderer = new WebGLRenderer(new WebGLRendererOptions(canvas));
 	renderer->setSize(WIDTH, HEIGHT);
 	renderer->setClearColor(0x80C6E5, 1);
-	document.get_body()->appendChild(renderer->get_domElement());
 
 	Scene* scene = new Scene();
 	PerspectiveCamera* camera = new PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
