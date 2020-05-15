@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>My first three.js app</title>
+		<title>Cheerp Anyref example</title>
 		<style>
 			body { margin: 0; }
 			canvas { display: block; }
@@ -22,6 +22,18 @@
 		<div>
 			<h1> Cheerp anyref example </h1>
 			<canvas id="canvas"></canvas>
+		</div>
+		<div>
+			<h2> What is this? </h1>
+			<div>
+				This is an example application compiled with Cheerp with experimental anyref support. See <a href="https://medium.com/p/2bba3fac707f">this blog post</a> for details. The source code is hosted <a href="https://github.com/yuri91/AnyPong">here</a>.
+			</div>
+			<div>
+				<b>NOTE:</b> In order to see the game you need to use a browser with the anyref wasm feature enabled. For chrome, you can do it by running it like this:
+				<pre>
+					chrome --js-flags="--experimental-wasm-anyref" https://yuri91.github.io/AnyPong
+				</pre>
+			</div>
 		</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
 		<script>
