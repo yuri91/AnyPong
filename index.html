@@ -16,23 +16,32 @@
 				color: white;
 				font-size: 32px;
 			}
+			#container {
+				width: 800px;
+				height: 600px;
+				background-color: grey;
+				display: flex;
+			}
+			#container > div {
+				margin: auto;
+			}
+			#container > div > p {
+				font-size: 32px;
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>
 		<div>
 			<h1> Cheerp anyref example </h1>
-			<canvas id="canvas"></canvas>
+			<div id="container">
+				<canvas id="canvas"></canvas>
+			</div>
 		</div>
 		<div>
 			<h2> What is this? </h1>
 			<div>
 				This is an example application compiled with Cheerp with experimental anyref support. See <a href="https://medium.com/p/2bba3fac707f">this blog post</a> for details. The source code is hosted <a href="https://github.com/yuri91/AnyPong">here</a>.
-			</div>
-			<div>
-				<b>NOTE:</b> In order to see the game you need to use a browser with the anyref wasm feature enabled. For chrome, you can do it by running it like this:
-				<pre>
-					chrome --js-flags="--experimental-wasm-anyref" https://yuri91.github.io/AnyPong
-				</pre>
 			</div>
 		</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
@@ -60,6 +69,22 @@
 					mainLoop();
 				}
 				raf();
+			}).catch( (e) => {
+				let container = document.getElementById("container");
+				let canvas = document.getElementById("canvas");
+				container.removeChild(canvas);
+				let d = document.createElement("div");
+				let p1 = document.createElement("p");
+				let p2 = document.createElement("p");
+				let p3 = document.createElement("p");
+				p1.innerText = 'Your browser is not running with anyref support enabled.';
+				p2.innerText = ' If you are on chrome, restart it with the following command line argument:';
+				p3.innerText = '--js-flags="--experimental-wasm-anyref"';
+				d.appendChild(p1);
+				d.appendChild(p2);
+				d.appendChild(p3);
+				container.appendChild(d);
+
 			});
 		</script>
 	</body>
