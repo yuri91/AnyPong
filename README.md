@@ -27,6 +27,6 @@ open in the browser (special flag needed at the moment, included in the script):
 make open
 ```
 
-## Acknowledments
+##  Acknowledgements
 
 The code is heavily inspired by this Three.js tutorial: http://embed.plnkr.co/zg1iEjXtv0krpPSgkWe3/
