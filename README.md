@@ -1,6 +1,6 @@
 # AnyPong
 
-Simple example of using the experimental anyref feature in Cheerp.
+Simple example of using the experimental anyref feature in [Cheerp](https://github.com/leaningtech/cheerp-meta).
 
 This is a simple pong-like game using Three.js.
 
